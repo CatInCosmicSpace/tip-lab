@@ -1,0 +1,35 @@
+!config
+# Arara, the cool TeX automation tool
+# Copyright (c) 2018, Paulo Roberto Massa Cereda
+# All rights reserved.
+#
+# This rule is part of arara.
+identifier: show
+name: Show
+authors:
+  - Alena Egorova
+commands:
+  - name: Showing pdf feauture
+    command: >
+      @{
+          prefix = [];
+          if (isUnix()) {
+              prefix = [ 'open' ];
+          }
+          else {
+              prefix = [ 'cmd', '/c' ];
+          }
+          base = getBasename(file).concat(".pdf");
+          return getCommand(prefix, base);
+      }
+arguments:
+  - identifier: extensions
+    flag: >
+      @{
+          if (isList(parameters.extensions)) {
+              return parameters.extensions;
+          }
+          else {
+              throwError('I was expecting a list of extensions.');
+          }
+      }

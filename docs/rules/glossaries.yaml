@@ -1,0 +1,28 @@
+!config
+# Make glossaries *without perl* rule for arara
+# author: Chris Hughes
+# last edited by: cmh, March 3rd 2014
+# https://tex.stackexchange.com/questions/163474/how-to-compile-glossaries-with-arara-without-perl
+# requires arara 3.0+
+#
+# Sample usage
+#
+# % arara: glossaries
+#
+identifier: glossaries
+name: Glossaries
+commands: 
+- name: Making glossary
+  command: makeindex -s @{getBasename(file)}.ist -t @{getBasename(file)}.glg -o @{getBasename(file)}.gls @{getBasename(file)}.glo
+arguments: 
+- identifier: extensions
+  flag: >
+    @{
+        if (isList(parameters.extensions)) {
+            return parameters.extensions;
+        }
+        else {
+            throwError('I was expecting a list of extensions.');
+        }
+    }
+

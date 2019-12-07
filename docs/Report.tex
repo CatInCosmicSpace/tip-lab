@@ -1,0 +1,26 @@
+% arara: pdflatex
+% arara: pdflatex
+% arara: remover: { patterns: [ '*.aux', '*.xdy', '*.toc', '*.out', '*.gl*', '*.ac*', '*.alg', '*.blg', '*.bbl' ] }
+
+\documentclass[utf8, 14pt, bold]{G7-32}
+\include{preamble.inc}
+
+\usepackage{amsthm}
+\include{macros.inc}
+\renewcommand{\thesection}{\arabic{section}}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+
+\begin{document}
+	\frontmatter
+	\RPZGroup{ИУ8-94}
+	\RPZStudent{А.Л. Кемурджиан}
+	\RPZTeacher{Н.В. Медведев}
+	\include{00-title-bmstu}
+	\mainmatter
+
+	\include{10-task}
+	\include{11-completion}
+	
+	\backmatter
+\end{document}

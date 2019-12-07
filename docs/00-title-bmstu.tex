@@ -1,0 +1,58 @@
+\StrLen{\RPZTitleStudent}[\StudentLen]
+\StrLen{\RPZTitleTeacher}[\TeacherLen]
+\ifthenelse{\StudentLen > \TeacherLen}{\StrLen{\RPZTitleStudent}[\SignLen]}{\StrLen{\RPZTitleTeacher}[\SignLen]}
+
+\pagestyle{empty}
+\noindent
+\begin{tabularx}{\textwidth}{L{2cm} C{\textwidth - 2.7cm}}
+    \includegraphics[scale=1]{inc/bmstu.jpg} &
+    {\centering\rmfamily\bfseries\fontsize{11pt}{11pt}\selectfont
+    Министерство науки и высшего образования Российской Федерации \\
+    Федеральное государственное бюджетное образовательное учреждение \\
+    высшего образования \\
+    <<Московский государственный технический университет \\
+    имени Н.Э. Баумана \\
+    (национальный исследовательский университет)>>\\
+    (МГТУ им. Н.Э. Баумана)}\\
+    \bottomrule[2pt]
+    \bottomrule
+\end{tabularx}
+
+\noindent
+\begin{tabularx}{\textwidth}{lX}
+{\fontsize{12pt}{12pt}\selectfont ФАКУЛЬТЕТ}
+    &
+    {\fontsize{12pt}{12pt}\selectfont <<Информатика и системы управления>> (ИУ)}\\
+    \hhline{~~}
+    {\fontsize{12pt}{12pt}\selectfont КАФЕДРА} &
+    {\fontsize{12pt}{12pt}\selectfont <<Информационная безопасность>> (ИУ8)}\\
+    \hhline{~~}
+\end{tabularx}
+\vfill
+
+\noindent
+{\centering\rmfamily\fontsize{20pt}{20pt}\selectfont
+ЛАБОРАТОРНАЯ РАБОТА \\ ПО ДИСЦИПЛИНЕ \\ \hfill <<ТЕХНИЧЕСКАЯ ЗАЩИТА ИНФОРМАЦИИ>> \hfill\null}
+
+\vspace{1cm}
+
+\noindent
+{\centering\rmfamily\fontsize{20pt}{20pt}\selectfont \hfill ВАРИАНТ №2 \hfill\null}
+
+\vfill
+
+\noindent
+{\rmfamily\fontsize{12pt}{12pt}\selectfont Студенты} \hfill $\stackrel[\text{\rmfamily\fontsize{9pt}{9pt}\selectfont (Группа)}]{}{\uline{\text{\rmfamily\fontsize{12pt}{12pt}\selectfont \RPZTitleGroup}}}$ \hfill\null \Signature{А.Д. Егорова}
+
+\hfill\null \Signature{\RPZTitleStudent}
+
+\hfill\null \Signature{Д.А. Набоков}
+
+\noindent
+{\rmfamily\fontsize{12pt}{12pt}\selectfont Руководитель} \hfill \Signature{\RPZTitleTeacher}
+
+\vspace{2cm}
+
+{\centering\rmfamily\itshape\fontsize{14pt}{14pt}\selectfont \the\year~г. \par}
+\newpage
+\pagestyle{plain}
