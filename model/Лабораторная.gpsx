@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExtendedGpssModel>
+  <Lines>
+    <Line Id="1">; ПЕРВЫЙ ТИП АТАК: СЗИ1 - ОСНОВНОЙ, СЗИ2 - РЕЗЕРВНЫЙ; GENERATE = 30</Line>
+    <Line Id="409">; ВТОРОЙ ТИП АТАК: СЗИ2 - ОСНОВНОЙ, СЗИ3 - РЕЗЕРВНЫЙ; GENERATE = 25 </Line>
+    <Line Id="410">; ТРЕТИЙ  ТИП АТАК: СЗИ3 - ОСНОВНОЙ, СЗИ1 - РЕЗЕРВНЫЙ; GENERATE = 20</Line>
+    <Line Id="411">; СЗИ1: ADVANCE = 25; СЗИ2: ADVANCE = 20; СЗИ3: ADVANCE = 25</Line>
+    <Line Id="414">; КОЛИЧЕСТВО АТАК = 10000</Line>
+    <Line Id="407"></Line>
+    <Line Id="408">GENERATE 30 ; ПЕРВЫЙ ТИП АТАК</Line>
+    <Line Id="292">SZI1_GENERAL TEST LE Q$QUEUE1,1,SZI1_RESERV ; СЗИ1 - ОСНОВНОЙ</Line>
+    <Line Id="294">QUEUE QUEUE1</Line>
+    <Line Id="296">SEIZE CHANNEL1</Line>
+    <Line Id="298">DEPART QUEUE1</Line>
+    <Line Id="300">ADVANCE 25,1</Line>
+    <Line Id="302">RELEASE CHANNEL1</Line>
+    <Line Id="304">TRANSFER ,SZI1_FAIL</Line>
+    <Line Id="318">SZI1_RESERV TEST LE Q$QUEUE2,1,SZI1_FAIL; СЗИ2 - РЕЗЕРВ ДЛЯ СЗИ1</Line>
+    <Line Id="415">QUEUE QUEUE2</Line>
+    <Line Id="416">SEIZE CHANNEL2</Line>
+    <Line Id="417">DEPART QUEUE2</Line>
+    <Line Id="418">ADVANCE 20,1</Line>
+    <Line Id="419">RELEASE CHANNEL2</Line>
+    <Line Id="420">SZI1_FAIL TERMINATE 1</Line>
+    <Line Id="422"></Line>
+    <Line Id="320">GENERATE 25; ВТОРОЙ ТИП АТАК</Line>
+    <Line Id="322">SZI2_GENERAL TEST LE Q$QUEUE2,1,SZI2_RESERV ; СЗИ2 - ОСНОВНОЙ</Line>
+    <Line Id="424">QUEUE QUEUE2</Line>
+    <Line Id="425">SEIZE CHANNEL2</Line>
+    <Line Id="426">DEPART QUEUE2</Line>
+    <Line Id="427">ADVANCE 20,1</Line>
+    <Line Id="428">RELEASE CHANNEL2</Line>
+    <Line Id="429">TRANSFER ,SZI2_FAIL</Line>
+    <Line Id="431">SZI2_RESERV TEST LE Q$QUEUE3,1,SZI2_FAIL; СЗИ3 - РЕЗЕРВ ДЛЯ СЗИ2</Line>
+    <Line Id="432">QUEUE QUEUE3</Line>
+    <Line Id="433">SEIZE CHANNEL3</Line>
+    <Line Id="434">DEPART QUEUE3</Line>
+    <Line Id="435">ADVANCE 25,1</Line>
+    <Line Id="436">RELEASE CHANNEL3</Line>
+    <Line Id="438">SZI2_FAIL TERMINATE 1</Line>
+    <Line Id="439"></Line>
+    <Line Id="456">   GENERATE 20; ТРЕТИЙ ТИП АТАК</Line>
+    <Line Id="440">SZI3_GENERAL TEST LE Q$QUEUE3,1,SZI3_RESERV ; СЗИ3 - ОСНОВНОЙ</Line>
+    <Line Id="441">QUEUE QUEUE3</Line>
+    <Line Id="442">SEIZE CHANNEL3</Line>
+    <Line Id="443">DEPART QUEUE3</Line>
+    <Line Id="444">ADVANCE 25,1</Line>
+    <Line Id="445">RELEASE CHANNEL3</Line>
+    <Line Id="446">TRANSFER ,SZI3_FAIL</Line>
+    <Line Id="448">SZI3_RESERV TEST LE Q$QUEUE1,1,SZI3_FAIL; СЗИ1 - РЕЗЕРВ ДЛЯ СЗИ3</Line>
+    <Line Id="449">QUEUE QUEUE1</Line>
+    <Line Id="450">SEIZE CHANNEL1</Line>
+    <Line Id="451">DEPART QUEUE1</Line>
+    <Line Id="452">ADVANCE 25,1</Line>
+    <Line Id="453">RELEASE CHANNEL1</Line>
+    <Line Id="455">SZI3_FAIL TERMINATE 1</Line>
+    <Line Id="397"></Line>
+    <Line Id="398">START 10000</Line>
+  </Lines>
+</ExtendedGpssModel>
