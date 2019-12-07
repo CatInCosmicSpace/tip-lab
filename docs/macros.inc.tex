@@ -8,9 +8,6 @@
 \renewcommand{\tabularxcolumn}[1]{m{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
-\newcommand\RPZReportType[1]{
-	\def\ReportType{#1}
-}
 
 \newcommand\RPZ[1]{
 	\def\RPZTitle{#1}
@@ -53,3 +50,9 @@
 	\end{flushright}
 \end{minipage}
 }
+
+\newtheorem{definition}{Определение}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\usepackage{float}
